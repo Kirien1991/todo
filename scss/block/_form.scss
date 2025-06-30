@@ -1,0 +1,17 @@
+.form {
+  min-height: 64px;
+  border-radius: 5px;
+  background-color: $white;
+
+  &__input {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    padding-left: 85px;
+    color: $form;
+
+    &--click {
+      color: $formClick;
+    }
+  }
+}
