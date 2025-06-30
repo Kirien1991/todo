@@ -6,6 +6,7 @@ html {
 
 body {
   background-color: #fafafa;
+  font-family: "Josefin Sans", sans-serif;
 }
 body.dark::before {
   background-image: url("/image/Bitmap-dark.jpg");
@@ -29,16 +30,6 @@ body::before {
   max-width: 540px;
   padding: 0 20px;
   box-sizing: content-box;
-}
-
-.form {
-  height: 64px;
-  border-radius: 5px;
-}
-.form__input {
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.25px;
 }
 
 /* Reset and base styles  */
@@ -158,13 +149,13 @@ input[type=file] {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 .bottom {
   min-height: 500px;
 }
 .bottom__txt {
-  font-family: "Josefin Sans", sans-serif;
   color: #9495a5;
   font-size: 14px;
   font-weight: 400;
@@ -172,4 +163,101 @@ input[type=file] {
   display: flex;
   justify-content: center;
   padding-top: 40px;
+}
+
+.form {
+  min-height: 64px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  color: #9495a5;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+}
+.custom-checkbox--colorTxt {
+  color: #494c6b;
+}
+.custom-checkbox ::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-image: url("/image/feedback/Path.svg");
+  background-repeat: no-repeat;
+}
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #ffffff;
+  border: 1px solid #e3e4f1;
+  border-radius: 50%;
+}
+.custom-checkbox .checkmark .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #ddd;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background: linear-gradient(#55ddff, #c058f3);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.list {
+  min-height: 64px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e3e4f1;
+  display: flex;
+  align-items: center;
+}
+
+.filtr {
+  min-height: 64px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  padding-bottom: 20px;
 }

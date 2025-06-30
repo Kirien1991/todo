@@ -1,0 +1,71 @@
+.custom-checkbox {
+  color: $grey;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  user-select: none;
+
+  &--colorTxt {
+    color: $dark;
+  }
+
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url("/image/feedback/Path.svg");
+    background-repeat: no-repeat;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e3e4f1;
+    border-radius: 50%;
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #ddd;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background: linear-gradient(#55ddff, #c058f3);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

@@ -1,11 +1,16 @@
 //base
+
+@import "./base/vars";
 @import "./base/base";
 @import "./base/mixins";
 @import "./base/reset";
-@import "./base/vars";
 
 //block
 @import "./block/header";
 @import "./block/bottom";
 @import "./block/feedback";
 @import "./block/form";
+@import "./block/custom-checkbox";
+@import "./block/list";
+@import "./block/filtr";
+@import "./block/input";
