@@ -1,8 +1,16 @@
 .list {
-  min-height: 64px;
+  max-height: 384px;
   border-radius: 5px;
-  background-color: $white;
+  overflow: auto;
+  background-color: $feedback;
   border-bottom: 1px solid $border;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  & > label {
+    border-bottom: 1px solid $border;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
 }
