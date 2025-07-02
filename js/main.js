@@ -25,3 +25,17 @@ document.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   cursorCircle.style.transform = "translate(-50%, -50%) scale(1)";
 });
+
+//filtr--action
+const filtrNavLi = document.querySelectorAll(".filtr-nav li");
+filtrNavLi.forEach(function (li) {
+  li.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    filtrNavLi.forEach(function (li1) {
+      li1.classList.remove("filtr-nav--active");
+    });
+
+    this.classList.add("filtr-nav--active");
+  });
+});

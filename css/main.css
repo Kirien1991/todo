@@ -286,19 +286,40 @@ input[type=file] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-}
-.filtr__grid a {
+  padding: 0 20px;
   color: #9495a5;
 }
-.filtr__grid a:hover {
-  color: #494c6b;
-}
-.filtr__grid-txt {
-  padding-left: 30px;
+.filtr__grid--right {
+  text-align: right;
 }
 .filtr__grid-nav ul {
   display: flex;
   gap: 10px;
+}
+
+.filtr-action {
+  color: #9495a5;
+}
+.filtr-action:hover {
+  color: #494c6b;
+}
+
+.filtr-nav {
+  display: flex;
+  gap: 15px;
+}
+.filtr-nav a {
+  color: #9495a5;
+  font-weight: 700;
+}
+.filtr-nav a:hover {
+  color: #494c6b;
+}
+.filtr-nav--active a {
+  color: #3a7cfd;
+}
+.filtr-nav--active a:hover {
+  color: #3a7cfd;
 }
 
 .input {
