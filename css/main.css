@@ -1,7 +1,13 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 body,
 html {
   height: 100vh;
+}
+
+html,
+* {
+  cursor: none;
 }
 
 body {
@@ -162,7 +168,11 @@ input[type=file] {
   letter-spacing: -0.19px;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
+  padding: 40px 0;
+}
+
+.feedback__shadow {
+  box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 
 .custom-checkbox {
@@ -273,12 +283,63 @@ input[type=file] {
   min-height: 64px;
   border-radius: 5px;
   background-color: #fafafa;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+}
+.filtr__grid a {
+  color: #9495a5;
+}
+.filtr__grid a:hover {
+  color: #494c6b;
+}
+.filtr__grid-txt {
+  padding-left: 30px;
+}
+.filtr__grid-nav ul {
+  display: flex;
+  gap: 10px;
 }
 
 .input {
   margin-bottom: 20px;
   border-radius: 5px;
   overflow: hidden;
+}
+
+/* Основные стили кастомного курсора */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference; /* Для контраста на любом фоне */
+}
+
+.cursor-circle {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.cursor-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Эффект при наведении на интерактивные элементы */
+.custom-cursor.active .cursor-circle {
+  width: 80px;
+  height: 80px;
+  opacity: 0.5;
 }

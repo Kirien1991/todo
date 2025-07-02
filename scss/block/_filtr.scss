@@ -2,6 +2,24 @@
   min-height: 64px;
   border-radius: 5px;
   background-color: $feedback;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+
+  &__grid a {
+    color: $grey;
+
+    &:hover {
+      color: $dark;
+    }
+  }
+
+  &__grid-txt {
+    padding-left: 30px;
+  }
+
+  &__grid-nav ul {
+    display: flex;
+    gap: 10px;
+  }
 }
